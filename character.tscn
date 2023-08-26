@@ -1,0 +1,444 @@
+[gd_scene load_steps=26 format=3 uid="uid://d2gkm87gvxwa3"]
+
+[ext_resource type="Script" path="res://Character.gd" id="1_ofck4"]
+[ext_resource type="Material" uid="uid://pe2i4qv2tdve" path="res://skin.tres" id="2_w1ohx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s6uhr"]
+friction = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hmwjt"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6oxk4"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_2twlg"]
+radius = 0.065
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1g57"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0l15p"]
+radius = 0.05
+height = 0.1
+radial_segments = 32
+rings = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrsrq"]
+albedo_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igh7t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t8niu"]
+height = 1.42
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6f61"]
+albedo_color = Color(0, 0.6, 0.6, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_i248k"]
+radius = 0.18
+height = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2wka"]
+size = Vector3(0.275, 0.12, 0.61)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgbqt"]
+albedo_color = Color(0.14902, 0.14902, 0.14902, 1)
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8auf"]
+albedo_color = Color(0.14902, 0.14902, 0.14902, 1)
+roughness = 0.25
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8vsvd"]
+
+[sub_resource type="Animation" id="Animation_dm0ty"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOffset/Right Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.279511, 0, -0.546345), Vector3(0.612153, 0.83752, -0.221037)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandOffset/Right Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.52467, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HandOffset/Left Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.28, 0, -0.546), Vector3(-0.612, 0.837, -0.221)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandOffset/Left Hand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.52467, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_drhkf"]
+resource_name = "Push"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOffset/Right Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.279511, 0, -0.546345), Vector3(0.279511, 0.000171185, -0.916074)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandOffset/Right Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.45618, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HandOffset/Left Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.28, 0, -0.546), Vector3(-0.28, -0.000171125, -0.916034)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandOffset/Left Hand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.45618, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ymqdb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOffset/Right Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.279511, 0, -0.546345)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandOffset/Right Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HandOffset/Left Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.28, 0, -0.546)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandOffset/Left Hand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b7wrx"]
+resource_name = "Stun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandOffset/Right Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.279511, 0, -0.546345), Vector3(0.9, 0, -0.047)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandOffset/Right Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HandOffset/Left Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.28, 0, -0.546), Vector3(-0.9, 0, -0.046)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandOffset/Left Hand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usp5w"]
+_data = {
+"Fall": SubResource("Animation_dm0ty"),
+"Push": SubResource("Animation_drhkf"),
+"RESET": SubResource("Animation_ymqdb"),
+"Stun": SubResource("Animation_b7wrx")
+}
+
+[sub_resource type="Animation" id="Animation_ycrao"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FeetOffset/Left Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.281, 0, -0.324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FeetOffset/Right Foot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.28095, 0, -0.324138)]
+}
+
+[sub_resource type="Animation" id="Animation_su8cb"]
+resource_name = "Walk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FeetOffset/Right Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.28095, 0, -0.324138), Vector3(0.28095, 0.0852064, -0.324138), Vector3(0.28095, 0, -0.324138), Vector3(0.28095, 0.0852064, -0.324138)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FeetOffset/Left Foot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.281, 0, -0.324), Vector3(-0.281, 0.085, -0.324), Vector3(-0.281, 0, -0.324), Vector3(-0.281, 0.085, -0.324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pljc0"]
+_data = {
+"RESET": SubResource("Animation_ycrao"),
+"Walk": SubResource("Animation_su8cb")
+}
+
+[node name="Character" type="RigidBody3D"]
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_s6uhr")
+continuous_cd = true
+can_sleep = false
+linear_damp_mode = 1
+linear_damp = 2.0
+angular_damp_mode = 1
+angular_damp = 2.0
+script = ExtResource("1_ofck4")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.361, 0)
+mesh = SubResource("SphereMesh_hmwjt")
+surface_material_override/0 = ExtResource("2_w1ohx")
+
+[node name="Nose" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068976, -0.52826)
+mesh = SubResource("SphereMesh_6oxk4")
+skeleton = NodePath("../../Torso")
+surface_material_override/0 = ExtResource("2_w1ohx")
+
+[node name="Left Eye" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.936311, -0.351172, 0, 0.351172, 0.936311, -0.160695, 0.249931, -0.382643)
+mesh = SubResource("SphereMesh_2twlg")
+skeleton = NodePath("../../Torso")
+surface_material_override/0 = SubResource("StandardMaterial3D_q1g57")
+
+[node name="Pupil" type="MeshInstance3D" parent="Head/Left Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0082109, -0.0218928)
+mesh = SubResource("SphereMesh_0l15p")
+skeleton = NodePath("../../../Torso")
+surface_material_override/0 = SubResource("StandardMaterial3D_yrsrq")
+
+[node name="Right Eye" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.936311, -0.351172, 0, 0.351172, 0.936311, 0.161, 0.250065, -0.382987)
+mesh = SubResource("SphereMesh_2twlg")
+skeleton = NodePath("../../Torso")
+surface_material_override/0 = SubResource("StandardMaterial3D_igh7t")
+
+[node name="Pupil" type="MeshInstance3D" parent="Head/Right Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0082109, -0.0218928)
+mesh = SubResource("SphereMesh_0l15p")
+skeleton = NodePath("../../../Torso")
+surface_material_override/0 = SubResource("StandardMaterial3D_yrsrq")
+
+[node name="Torso" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.766409, 0)
+mesh = SubResource("CapsuleMesh_t8niu")
+surface_material_override/0 = SubResource("StandardMaterial3D_s6f61")
+
+[node name="HandOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Right Hand" type="MeshInstance3D" parent="HandOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279511, 0, -0.546345)
+mesh = SubResource("SphereMesh_i248k")
+surface_material_override/0 = ExtResource("2_w1ohx")
+
+[node name="Left Hand" type="MeshInstance3D" parent="HandOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0, -0.546)
+mesh = SubResource("SphereMesh_i248k")
+surface_material_override/0 = ExtResource("2_w1ohx")
+
+[node name="FeetOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181975, 0)
+
+[node name="Right Foot" type="MeshInstance3D" parent="FeetOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28095, 0, -0.324138)
+mesh = SubResource("BoxMesh_u2wka")
+surface_material_override/0 = SubResource("StandardMaterial3D_jgbqt")
+
+[node name="Left Foot" type="MeshInstance3D" parent="FeetOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281, 0, -0.324)
+mesh = SubResource("BoxMesh_u2wka")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8auf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_8vsvd")
+
+[node name="AnimationPlayerHands" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_usp5w")
+}
+
+[node name="AnimationPlayerFeet" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pljc0")
+}
+
+[node name="GroundCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+target_position = Vector3(0, -0.3, 0)
+
+[node name="CharacterDetector" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35329, -0.442145)
+target_position = Vector3(0, 0, -0.5)
+collision_mask = 2
+
+[node name="GroundDetector" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29812, -0.473422)
+target_position = Vector3(0, -2, -3)
+
+[node name="StunTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PushCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="PushCooldown" to="." method="_on_push_cooldown_timeout"]

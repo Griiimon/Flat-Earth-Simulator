@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxwcyo6elwcwu"]
+
+[ext_resource type="PackedScene" uid="uid://d2gkm87gvxwa3" path="res://character.tscn" id="1_d1fk6"]
+[ext_resource type="Script" path="res://main.gd" id="1_ph5v4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rte6s"]
+albedo_color = Color(0.294118, 0.286275, 0.294118, 1)
+metallic = 0.65
+roughness = 0.44
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ph5v4")
+CharacterScene = ExtResource("1_d1fk6")
+height = 10
+radius = 6
+
+[node name="Flat Earth" type="CSGCylinder3D" parent="."]
+use_collision = true
+radius = 10.0
+height = 0.5
+sides = 32
+material = SubResource("StandardMaterial3D_rte6s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 9, 12)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Characters" type="Node" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
